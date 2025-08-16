@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { formsAPI, airtableAPI } from '../services/api';
-import { uploadFiles, type AttachmentFile } from '../services/uploadService';
+import { uploadFiles } from '../services/uploadService';
 import type { Form, FormField, FormResponse } from '../types';
 import styles from './FormViewer.module.css';
 

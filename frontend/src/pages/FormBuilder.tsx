@@ -434,10 +434,10 @@ const FormBuilder: React.FC<FormBuilderProps> = ({ formId }) => {
                             <input
                               type="checkbox"
                               checked={!!field.conditionalLogic}
-                              onChange={(e) => updateField(index, { 
+                              onChange={(e) => updateField(index, {
                                 conditionalLogic: e.target.checked ? {
                                   dependsOnField: '',
-                                  condition: 'equals',
+                                  condition: 'equals' as const,
                                   value: ''
                                 } : undefined
                               })}
@@ -455,8 +455,9 @@ const FormBuilder: React.FC<FormBuilderProps> = ({ formId }) => {
                                   value={field.conditionalLogic.dependsOnField || ''}
                                   onChange={(e) => updateField(index, {
                                     conditionalLogic: {
-                                      ...field.conditionalLogic,
-                                      dependsOnField: e.target.value
+                                      dependsOnField: e.target.value,
+                                      condition: field.conditionalLogic?.condition || 'equals',
+                                      value: field.conditionalLogic?.value || ''
                                     }
                                   })}
                                   title="Select a field to depend on"
@@ -481,8 +482,9 @@ const FormBuilder: React.FC<FormBuilderProps> = ({ formId }) => {
                                       value={field.conditionalLogic.condition}
                                       onChange={(e) => updateField(index, {
                                         conditionalLogic: {
-                                          ...field.conditionalLogic,
-                                          condition: e.target.value as 'equals' | 'not_equals' | 'contains' | 'not_contains'
+                                          dependsOnField: field.conditionalLogic?.dependsOnField || '',
+                                          condition: e.target.value as 'equals' | 'not_equals' | 'contains' | 'not_contains',
+                                          value: field.conditionalLogic?.value || ''
                                         }
                                       })}
                                       title="Select condition type"
@@ -502,7 +504,8 @@ const FormBuilder: React.FC<FormBuilderProps> = ({ formId }) => {
                                       value={field.conditionalLogic.value || ''}
                                       onChange={(e) => updateField(index, {
                                         conditionalLogic: {
-                                          ...field.conditionalLogic,
+                                          dependsOnField: field.conditionalLogic?.dependsOnField || '',
+                                          condition: field.conditionalLogic?.condition || 'equals',
                                           value: e.target.value
                                         }
                                       })}
