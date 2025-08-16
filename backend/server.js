@@ -58,7 +58,25 @@ app.use('/api/upload', uploadRoutes);
 
 // Health check
 app.get('/', (req, res) => {
-  res.json({ message: 'Airtable Form Builder API is running!' });
+  res.json({ 
+    message: 'Airtable Form Builder API is running!',
+    environment: process.env.NODE_ENV,
+    timestamp: new Date().toISOString()
+  });
+});
+
+// 404 handler
+app.use('*', (req, res) => {
+  res.status(404).json({ message: 'API endpoint not found' });
+});
+
+// Error handler
+app.use((error, req, res, next) => {
+  console.error('Error:', error);
+  res.status(500).json({ 
+    message: 'Internal server error',
+    error: process.env.NODE_ENV === 'development' ? error.message : undefined
+  });
 });
 
 const PORT = process.env.PORT || 5000;

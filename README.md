@@ -1,27 +1,45 @@
-# Airtable Form Builder
+# 🚀 MERN Stack Airtable Form Builder - Interview Task
 
-A full-stack MERN application that allows users to create dynamic forms connected to their Airtable bases. Users can log in with Airtable OAuth, build forms using their table fields, apply conditional logic, and automatically save responses to Airtable.
+A complete MERN Stack application demonstrating dynamic form building with Airtable integration, OAuth authentication, conditional logic, and file uploads.
 
-## Features
+## ✨ Features Demonstrated
 
-### Core Features
-- ✅ **Airtable OAuth Integration** - Secure login with Airtable account
-- ✅ **Dynamic Form Builder** - Create forms using fields from Airtable tables
-- ✅ **Conditional Logic** - Show/hide fields based on previous answers
-- ✅ **Supported Field Types**:
-  - Short text (singleLineText)
-  - Long text (multilineText) 
-  - Single select (singleSelect)
-  - Multi select (multipleSelects)
-  - File upload (multipleAttachments)
-- ✅ **Form Responses** - Automatically save responses to Airtable
-- ✅ **Form Management** - Create, edit, delete, and view forms
+### 🔐 Authentication & Authorization
+- ✅ Airtable OAuth 2.0 integration
+- ✅ JWT token-based authentication
+- ✅ Secure session management
+- ✅ Protected routes and API endpoints
 
-### Tech Stack
-- **Frontend**: React 19, TypeScript, Vite, CSS Modules
-- **Backend**: Node.js, Express, MongoDB, JWT
-- **Integration**: Airtable REST API, OAuth 2.0
-- **Database**: MongoDB with Mongoose
+### 📊 Dynamic Form Builder
+- ✅ Connect to any Airtable base and table
+- ✅ Auto-detect field types and options
+- ✅ Drag-and-drop field ordering
+- ✅ Real-time form preview
+- ✅ Custom field labels and validation
+
+### 🎯 Conditional Logic System
+- ✅ Show/hide fields based on other field values
+- ✅ Multiple condition types (equals, contains, etc.)
+- ✅ Real-time form logic evaluation
+- ✅ Complex dependency chains
+
+### 📁 File Upload & Management
+- ✅ Multiple file uploads
+- ✅ File type validation
+- ✅ Direct upload to Airtable attachments
+- ✅ Image and document support
+
+### 📈 Live Data Integration
+- ✅ Real-time data fetching from Airtable
+- ✅ Live form submission tracking
+- ✅ Data visualization and export
+- ✅ Bidirectional sync with Airtable
+
+### 🎨 Professional UI/UX
+- ✅ Modern responsive design
+- ✅ CSS modules with TypeScript
+- ✅ Professional design system
+- ✅ Accessibility features
 
 ## Setup Instructions
 
