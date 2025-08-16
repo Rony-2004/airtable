@@ -1,0 +1,153 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--secondary-500) 100%);
+  border-radius: var(--border-radius-lg);
+  color: white;
+}
+
+.header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 0 0 1rem 0;
+  opacity: 0.9;
+}
+
+.refreshBtn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.refreshBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.error {
+  color: var(--error-500);
+  font-weight: 500;
+}
+
+.noData {
+  text-align: center;
+  padding: 3rem;
+  background: var(--gray-50);
+  border-radius: var(--border-radius-lg);
+  color: var(--text-secondary);
+}
+
+.dataTable {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 200px repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--gray-200);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 200px repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--gray-200);
+}
+
+.tableRow:nth-child(even) {
+  background: var(--gray-100);
+}
+
+.tableCell {
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid var(--gray-200);
+  word-wrap: break-word;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.tableHeader .tableCell {
+  background: var(--gray-50);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.attachment {
+  margin: 0.25rem 0;
+}
+
+.attachment a {
+  color: var(--primary-500);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.attachment a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--success-50);
+  border: 2px solid var(--success-200);
+  border-radius: var(--border-radius-lg);
+  color: var(--success-800);
+}
+
+.badge {
+  background: var(--success-500);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.footer small {
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .tableCell {
+    padding: 0.75rem;
+    min-height: auto;
+  }
+}
