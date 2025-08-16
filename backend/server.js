@@ -65,8 +65,8 @@ app.get('/', (req, res) => {
   });
 });
 
-// 404 handler
-app.use('*', (req, res) => {
+// 404 handler - must be last
+app.use((req, res, next) => {
   res.status(404).json({ message: 'API endpoint not found' });
 });
 
